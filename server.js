@@ -13,5 +13,5 @@ function handler (req, res) {
 
 const server = http.createServer(handler)
 server.listen(4000, function () {
-  console.log('listening on port 8080')
+  console.log('listening on port 4000')
 })

@@ -11,7 +11,12 @@ app.use(store)
 app.route('/', require('./views/main'))
 app.route('/new', require('./views/new-post'))
 app.route('/:post', require('./views/post'))
-app.route('/*', require('./views/404'))
+
+app.use((state, emitter) => {
+  emitter.on('navigate', (route) => {
+    console.log(`Navigated to ${route}`)
+  })
+})
 
 if (process.env.NODE_ENV !== 'production') {
   app.use(require('choo-devtools')())
