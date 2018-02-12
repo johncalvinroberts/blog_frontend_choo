@@ -1,0 +1,26 @@
+{
+  "name": "blog_frontend_lean",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ENV=production bankai build --verbose --assets=assets --js [ --transform envify ] src/index.js public/",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bankai": "^9.5.1",
+    "choo": "^6.7.0",
+    "choo-service-worker": "^2.4.0",
+    "nanocomponent": "^6.5.0",
+    "node-fetch": "^2.0.0",
+    "sheetify": "^7.2.0",
+    "wingcss": "^1.0.0-beta"
+  },
+  "devDependencies": {
+    "choo-devtools": "^2.3.3",
+    "standard": "^10.0.3"
+  }
+}
