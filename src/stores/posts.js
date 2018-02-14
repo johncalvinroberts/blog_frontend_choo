@@ -3,7 +3,7 @@ var api = 'http://localhost:8000'
 
 function store (state, emitter) {
   state.posts = []
-  state.fetchedPosts = []
+  state.currentPost = {}
 
   emitter.on('fetchPosts', function () {
     fetch(`${api}/posts`)
@@ -18,7 +18,7 @@ function store (state, emitter) {
     fetch(`${api}/posts/${slug}`)
       .then(res => res.json())
       .then(post => {
-        state.fetchedPosts.push(post)
+        state.currentPost = post
         emitter.emit(state.events.RENDER)
       })
   })

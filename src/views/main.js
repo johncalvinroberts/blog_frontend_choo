@@ -2,7 +2,7 @@ var html = require('choo/html')
 var postItem = require('../components/post-list-item')
 var css = require('sheetify')
 
-const prefix = css`
+var prefix = css`
   body {
     min-height: 100vh;
     color: #333;
@@ -37,7 +37,6 @@ const prefix = css`
   }
   :host .card-body {
     padding: 0 3rem 2rem 3rem;
-    min-height: 100px;
   }
 `
 function homeView (state, emit) {
