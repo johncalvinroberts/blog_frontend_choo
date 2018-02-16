@@ -2,7 +2,7 @@ const http = require('http')
 const bankai = require('bankai/http')
 const path = require('path')
 
-var compiler = bankai(path.join(__dirname, '/src'))
+const compiler = bankai(path.join(__dirname, '/src'))
 
 function handler (req, res) {
   compiler(req, res, function () {

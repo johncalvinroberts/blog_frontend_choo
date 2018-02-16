@@ -4,7 +4,7 @@ var api = 'http://localhost:8000'
 function store (state, emitter) {
   state.posts = []
   state.currentPost = {}
-
+  state.darkMode = false
   emitter.on('fetchPosts', function () {
     fetch(`${api}/posts`)
       .then(res => res.json())
@@ -21,6 +21,10 @@ function store (state, emitter) {
         state.currentPost = post
         emitter.emit(state.events.RENDER)
       })
+  })
+  emitter.on('toggleDark', function () {
+    state.darkMode = !state.darkMode
+    emit.emit(state.events.RENDER)
   })
 }
 

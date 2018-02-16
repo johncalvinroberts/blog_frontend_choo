@@ -1,5 +1,5 @@
 {
-  "name": "blog_frontend_lean",
+  "name": "blog_frontend_choo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,10 +11,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.17.1",
     "bankai": "^9.5.1",
     "choo": "^6.7.0",
     "choo-service-worker": "^2.4.0",
-    "nanocomponent": "^6.5.0",
+    "marked": "^0.3.12",
     "node-fetch": "^2.0.0",
     "sheetify": "^7.2.0",
     "wingcss": "^1.0.0-beta"

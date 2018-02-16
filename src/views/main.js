@@ -39,7 +39,7 @@ var prefix = css`
     padding: 0 3rem 2rem 3rem;
   }
 `
-function homeView (state, emit) {
+function mainView (state, emit) {
   var posts = state.posts
   if (posts.length < 1) emit('fetchPosts')
   var postsList = posts.map(post => postItem(post))
@@ -64,4 +64,4 @@ function homeView (state, emit) {
   }
 }
 
-module.exports = homeView
+module.exports = mainView
