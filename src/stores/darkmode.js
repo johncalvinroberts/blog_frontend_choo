@@ -1,18 +1,16 @@
 function store (state, emitter) {
-  var white = '#ffffff'
-  var black = '#333333'
   state.darkMode = false
-  state.backgroundColor = white
-  state.textColor = black
+  state.backgroundColor = '#C4C4C4'
+  state.textColor = '#333333'
 
   emitter.on('toggleDark', function () {
     state.darkMode = !state.darkMode
     if (state.darkMode) {
-      state.backgroundColor = black
-      state.textColor = white
+      state.backgroundColor = '#333333'
+      state.textColor = '#C4C4C4'
     } else {
-      state.backgroundColor = white
-      state.textColor = black
+      state.backgroundColor = '#C4C4C4'
+      state.textColor = '#333333'
     }
     emitter.emit(state.events.RENDER)
   })

@@ -1,12 +1,14 @@
 var html = require('choo/html')
 var postItem = require('../components/post-list-item')
 var css = require('sheetify')
+var DarkModeBtn = require('../components/dark-mode-button')
 
-var prefix = css`
+function getStyle (state) {
+  var prefix = css`
   body {
     min-height: 100vh;
-    color: #333;
-    background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+    color: #C4C4C4;
+    background-color: #000000;
   }
   :host .cards {
     display: flex;
@@ -38,17 +40,22 @@ var prefix = css`
   :host .card-body {
     padding: 0 3rem 2rem 3rem;
   }
-`
+`  
+  return prefix
+}
+
 function mainView (state, emit) {
   var posts = state.posts
+  var darkModeBtn = DarkModeBtn(state, emit)
   if (posts.length < 1) emit('fetchPosts')
   var postsList = posts.map(post => postItem(post))
-
+  var prefix = getStyle(state)
   return html`
     <body class="${prefix}">
       <main class="">
+        ${darkModeBtn}
         <section class="container center">
-          <h1 class="">title or something here</h1>
+          <h1 class="">blog.</h1>
         </section>
         <section class="container center">
           <div class="cards">
